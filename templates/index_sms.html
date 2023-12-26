@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Spam Classifier</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+
+</head>
+<body>
+    <h1>SMS Spam Classifier</h1>
+    <form method="post" action="/predict_sms">
+        <label for="input_sms">Enter the Message:</label>
+        <textarea id="input_sms" name="input_sms" rows="4" cols="50">{{ input_sms }}</textarea>
+        <br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction Result:</h2>
+        <p>Input Message: {{ input_sms }}</p>
+        <p>Prediction: {{ prediction }}</p>
+        {% if confidence %}
+            <p>Confidence: {{ confidence }}</p>
+        {% endif %}
+    {% elif error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>
