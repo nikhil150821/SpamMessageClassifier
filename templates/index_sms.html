@@ -11,7 +11,7 @@
     <h1>SMS Spam Classifier</h1>
     <form method="post" action="/predict_sms">
         <label for="input_sms">Enter the Message:</label>
-        <textarea id="input_sms" name="input_sms" rows="4" cols="50">{{ input_sms }}</textarea>
+        <textarea id="input_sms" name="input_sms" rows="4" cols="50" placeholder="Enter your message here">{{ input_sms }}</textarea>
         <br>
         <button type="submit">Predict</button>
     </form>
