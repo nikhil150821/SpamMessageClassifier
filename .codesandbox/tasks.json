@@ -4,6 +4,10 @@
     {
       "name": "pip install -r requirements.txt",
       "command": "pip install -r requirements.txt"
+    },
+    {
+      "name": "import nltk nltk.download('stopwords')",
+      "command": "pip install stopwords"
     }
   ],
 

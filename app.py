@@ -20,9 +20,11 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 port_stemmer = PorterStemmer()
 
+
 @app.route('/')
 def index():
     return render_template('index_sms.html', input_sms=None, prediction=None, error=None)
+
 
 @app.route('/predict_sms', methods=['POST'])
 def predict_sms():
@@ -48,18 +50,23 @@ def predict_sms():
     else:
         return render_template('index_sms.html', input_sms=None, prediction=None, error='Please enter a message.')
 
+
 def clean_text(text):
     stop_words = set(stopwords.words('english'))
     text = word_tokenize(text)  # Create tokens
     text = " ".join(text)  # Join tokens
-    text = [char for char in text if char not in string.punctuation]  # Remove punctuations
+    # Remove punctuations
+    text = [char for char in text if char not in string.punctuation]
     text = ''.join(text)  # Join the letters
-    text = [char for char in text if char not in re.findall(r"[0-9]", text)]  # Remove Numbers
+    text = [char for char in text if char not in re.findall(
+        r"[0-9]", text)]  # Remove Numbers
     text = ''.join(text)  # Join the letters
-    text = [word.lower() for word in text.split() if word.lower() not in stop_words]  # Remove common English words
+    text = [word.lower() for word in text.split() if word.lower()
+            not in stop_words]  # Remove common English words
     text = ' '.join(text)  # Join the letters
     text = list(map(lambda x: port_stemmer.stem(x), text.split()))
     return " ".join(text)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
