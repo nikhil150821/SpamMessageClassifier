@@ -15,8 +15,11 @@
   "tasks": {
     "start": {
       "name": "start",
-      "command": "python main.py",
-      "runAtStart": true
+      "command": "python app.py",
+      "runAtStart": true,
+      "preview": {
+        "port": 5000
+      }
     },
     "python app.py": {
       "name": "python app.py",
