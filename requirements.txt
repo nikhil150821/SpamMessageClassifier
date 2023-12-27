@@ -1,2 +1,4 @@
 Flask==2.3.3
-PIL
+Flask==2.3.3
+Pillow==8.4.0
+numpy==1.26.0b1
