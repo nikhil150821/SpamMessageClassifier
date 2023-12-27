@@ -11,7 +11,7 @@ import base64
 import string
 import re
 import nltk
-nltk.data.path.append('/root/nltk_data')
+nltk.data.path.append('./nltk_data')
 
 app = Flask(__name__)
 
