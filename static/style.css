@@ -97,4 +97,10 @@ p {
   textarea {
     width: 70%;
   }
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 200px;
+    text-align: left; /* Left-align labels */
+  }
 }
