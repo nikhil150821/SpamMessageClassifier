@@ -24,7 +24,8 @@ port_stemmer = PorterStemmer()
 
 @app.route('/')
 def index():
-    return render_template('index_sms.html', input_sms=None, prediction=None, error=None)
+    input_sms_value = get_input_sms_value()
+    return render_template('index_sms.html', input_sms=input_sms_value, prediction=None, error=None)
 
 
 @app.route('/predict_sms', methods=['POST'])
