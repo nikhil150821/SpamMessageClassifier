@@ -36,7 +36,8 @@ form {
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 200px;
+  margin-bottom: 5px;
+  margin-left:200px;
   text-align: left; /* Left-align labels */
 }
 
@@ -100,7 +101,8 @@ p {
   label {
     display: block;
     font-weight: bold;
-    margin-bottom: 200px;
+    margin-bottom: 5px;
+    margin-right:100px;
     text-align: left; /* Left-align labels */
   }
 }
