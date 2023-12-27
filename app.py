@@ -1,3 +1,7 @@
+from sklearn.feature_extraction.text import TfidfVectorizer
+from nltk.stem import PorterStemmer
+from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
 from flask import Flask, render_template, request
 from PIL import Image
 import numpy as np
@@ -7,10 +11,7 @@ import base64
 import string
 import re
 import nltk
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
-from sklearn.feature_extraction.text import TfidfVectorizer
+nltk.data.path.append('/root/nltk_data')
 
 app = Flask(__name__)
 
