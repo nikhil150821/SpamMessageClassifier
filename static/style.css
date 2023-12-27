@@ -36,12 +36,12 @@ form {
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 200px;
   text-align: left; /* Left-align labels */
 }
 
 textarea {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
